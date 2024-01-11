@@ -11,5 +11,6 @@ runs:
             path: node_modules
             key: dep-node-modules-${{ hashFiles('**/package-lock.js') }}
         - name: Install Depedencies
+        if: steps.cache.outputs.cache-hits != 'true'
         run: npm ci
         shell: bash
