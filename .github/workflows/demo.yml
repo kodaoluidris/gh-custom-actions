@@ -22,7 +22,7 @@ jobs:
     runs-on: macos-latest
     steps: 
     - name: Load and cache dependencies
-      uses: ./.github/actions/cached-deps
+      uses: ./.github/workflows/actions/cached-deps
     - name: Lint Code
       run: npm run lint
     - name: Lint Message 
