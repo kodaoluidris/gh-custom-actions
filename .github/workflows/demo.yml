@@ -16,8 +16,6 @@ jobs:
         key: dep-node-modules-${{ hashFiles('**/package-lock.js') }}
     - name: Install Depedencies
       run: npm ci
-    - name: Lint Code
-      run: npm run lint
     - name: run test
       run: npm run test
   lint:
