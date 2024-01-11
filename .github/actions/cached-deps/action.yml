@@ -3,8 +3,6 @@ description: this action helps to install and cache dependencies
 runs: 
     using: 'composite'
     steps:
-      - name: Get Code
-        uses: actions/checkout@v3 
       - name: cache dependencies
         uses: actions/cache@v3
         with:
