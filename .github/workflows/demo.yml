@@ -20,8 +20,7 @@ jobs:
       run: npm run lint
     - name: run test
       run: npm run test
-
-  build:
+  lint:
     runs-on: macos-latest
     steps: 
     - name: Get Code
@@ -35,9 +34,25 @@ jobs:
       run: npm ci
     - name: Lint Code
       run: npm run lint
+    - name: Lint Message 
+      run: echo "Operation SUccessful"
+  build:
+    needs: test
+    runs-on: macos-latest
+    steps: 
+    - name: Get Code
+      uses: actions/checkout@v3 
+    - name: cache dependecies
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: dep-node-modules-${{ hashFiles('**/package-lock.js') }}
+    - name: Install Depedencies
+      run: npm ci
     - name: Build Project 
       run: npm run build
   deploy:
+    needs: build
     runs-on: macos-latest
     steps: 
     - name: EchoDeploying
