@@ -45,3 +45,8 @@ jobs:
     steps: 
     - name: EchoDeploying
       run: echo "Deploying Website..."
+  information: 
+    runs-on: macos-latest
+    steps:
+    - name: "Run Custom actions..."
+      uses: ./.github/actions/deploy

@@ -1,0 +1,5 @@
+name: Deployment of static site to s3 bucket
+description: Deployment of static site to s3 bucket
+runs:
+  using: "node16"
+  main: main.js
