@@ -48,5 +48,7 @@ jobs:
   information: 
     runs-on: macos-latest
     steps:
+    - name: Get Code
+      uses: actions/checkout@v3 
     - name: "Run Custom actions..."
       uses: ./.github/actions/deploy
